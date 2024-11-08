@@ -1,7 +1,8 @@
 import 'dart:async';
 import 'package:clean_temp/res/constants/constants_imports.dart';
-import 'package:clean_temp/res/utils/utils_imports.dart';
+import 'package:clean_temp/res/constants/functions/loading_function.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 
@@ -10,7 +11,7 @@ import '../../../res/routes/routes_imports.dart';
 import '../../widgets/widgets_imports.dart';
 
 class SplashScreen extends StatefulWidget {
-  SplashScreen({super.key});
+  const SplashScreen({super.key});
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();
@@ -19,10 +20,9 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     Timer(
-      Duration(seconds: 3),
+      const Duration(seconds: 3),
       () {
         Get.toNamed(RouteName.loginScreen);
       },
@@ -34,7 +34,6 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: themeController.currentTheme.colors.appMainFirstColor,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -42,13 +41,14 @@ class _SplashScreenState extends State<SplashScreen> {
           Center(
             child: FlippingLogo(
               imagePath: ImageAssets.appLogo,
-              height: 40.h,
-              width: 40.w,
+              height: 100.h,
+              width: 100.w,
             ),
           ),
-          LoadingAnimationWidget.fourRotatingDots(
-              color: themeController.currentTheme.colors.appMainFirstColor,
-              size: 100)
+          SizedBox(
+            height: 50.h,
+          ),
+          LoadingFunction.simpleLoading()
         ],
       ),
     );

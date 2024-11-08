@@ -20,4 +20,4 @@ export 'getx_localization/leanguages.dart';
 export 'common/common.dart';
 
 //functions
-export 'functions/functions.dart';
+export 'functions/sanckBarFunction.dart';

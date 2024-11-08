@@ -1,3 +1,4 @@
+import 'package:clean_temp/res/constants/assets/app_icons.dart';
 import 'package:clean_temp/res/routes/routes_imports.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -11,6 +12,9 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: AppIcons.arrowNext,
+      ),
       body: Center(
         child: GestureDetector(
             onTap: () {
